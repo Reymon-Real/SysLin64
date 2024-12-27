@@ -14,24 +14,18 @@ SECTIONS {
 
     .text : {
         *(.text)
-        *(.code)
-        *(_TEXT)
-        *(_CODE)
     } > TEXT
 
     .data : {
         *(.data)
-        *(_DATA)
     } > DATA
 
     .bss : {
         *(.bss)
-        *(_BSS)
     } > BSS
 
     .rodata : {
         *(.rodata)
-        *(_RODATA)
     } > RODATA
 
 }

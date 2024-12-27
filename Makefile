@@ -25,6 +25,21 @@ all: $(SPX) $(EPX)
 run: $(EPX)
 	@./$<
 
+commit:
+	git add .
+	@echo "Ingresa el commit"
+	@read commit
+	git commit -m $$commit
+	git push origin main
+
+commit.middle:
+	git add .
+	git commit -m "Guardar cambios medianos"
+
+commit.minor:
+	git add .
+	git commit -m "Guardar cambios menores"
+
 $(EPX): bin/main.o
 	$(LD) $(LDFLAGS) -o $@ $< -lsyslin64 -rpath=lib
 
