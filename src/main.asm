@@ -13,7 +13,7 @@ section .text
 
         jmp sys_exit
 
-section .text
+section .rodata
     msg:
         .pointer: db "Hola Mundo", 0xD, 0xA, 0x0
         .length: equ $ - msg.pointer
