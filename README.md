@@ -8,3 +8,5 @@ Cada llamada en está biblioteca está hecha para ser más rápida que las llama
 Actualmente sigue en una fase de desarrollo temprana, pero conforme pase el tiempo se le agregaran más funciones.
 
 El objetivo final es que tenga todas y cada una de las llamadas al sistema que existen en Linux, pero con un mayor rendimiento que sus versiones en C
+
+Contará con soporte para C. Esto se logrará con un archivo de cabecera

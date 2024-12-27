@@ -28,9 +28,12 @@ run: $(EPX)
 commit:
 	@git add .
 	@echo "Ingresa el commit"
-	@read commit; \
-	git commit -m "$$commit"
+	@read commit; git commit -m "$$commit";
 	@git push origin main
+
+commit.great:
+	@git add .
+	@git commit -m "Guardar cambios grandes"
 
 commit.middle:
 	@git add .
@@ -52,7 +55,7 @@ bin/%.o: src/%.asm $(HEADER)
 
 # Reglas .PHONY
 
-.PHONY: clean run all $(LD) $(NASM) $(LDFLAGS) $(NASMFLAGS)
+.PHONY: clean commit commit.great commit.middle commit.minor run all $(LD) $(NASM) $(LDFLAGS) $(NASMFLAGS)
 
 clean:
 	$(RM) $(OBJECT) $(SPX) $(EPX)
