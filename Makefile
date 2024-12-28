@@ -25,6 +25,9 @@ all: $(SPX) $(EPX)
 run: $(EPX)
 	@./$<
 
+git.push:
+	@git push origin main
+
 commit:
 	@git add .
 	@echo "Ingresa el commit"
