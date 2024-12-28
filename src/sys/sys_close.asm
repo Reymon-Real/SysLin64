@@ -3,28 +3,26 @@
 ;; -----------------------------------------
 ;; |=======================================|
 ;; |=== @author: Eduardo Pozos Huerta	===|
-;; |=== @file: sys_open.asm		===|
+;; |=== @file: sys_close.asm		===|
 ;; |=== @date: 27/12/2024		===|
 ;; |=======================================|
 ;; -----------------------------------------
 
 ;; -------------------------------------------------
 ;; |===============================================|
-;; |=== Indicamos que es un programa de 64 bits	===|
-;; |=== 	por legibilidad y seguridad	===|
+;; |=== Indicamos que es programa de 64 bits	===|
+;; |=== 	por seguridad y legibilidad	===|
 ;; |===============================================|
 ;; -------------------------------------------------
 
 bits 64
 
-;; -------------------------------------------------
-;; |===============================================|
+;; |================================================|
 ;; |=== Indicamos que la etiqueta es visible	===|
 ;; |=== 	y su tipo de dato		===|
-;; |===============================================|
-;; -------------------------------------------------
+;; |================================================|
 
-global sys_open: function
+global sys_close: function
 
 ;; ---------------------------
 ;; |=========================|
@@ -33,8 +31,8 @@ global sys_open: function
 ;; ---------------------------
 
 section .text
-	sys_open:		;; Indicamos el nombre del procedimiento
-		mov eax, 2	;; Indicamos el syscall (open)
+	sys_close:		;; Indicamos el nombre del procedimiento
+		mov rax, 3	;; Indicamos el syscall (close)
 		syscall		;; Llamamos al kernel Linux
 		ret		;; Retornamos a donde fue llamada la etiqueta
-	.pic: dq $ - sys_open	;; Hacemos PIC el código
+	.pic: dq $ - sys_close	;; Hacemos el código PIC
