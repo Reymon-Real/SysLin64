@@ -29,7 +29,6 @@ commit:
 	@git add .
 	@echo "Ingresa el commit"
 	@read commit; git commit -m "$$commit";
-	@git push origin main
 
 commit.great:
 	@git add .
