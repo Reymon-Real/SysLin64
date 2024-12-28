@@ -1,7 +1,6 @@
 global start
 
-extern sys_write: function
-extern sys_exit: function
+%include "syslin.inc"
 
 section .text
     start:
